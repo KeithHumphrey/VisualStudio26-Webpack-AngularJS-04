@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Webpack Demo</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div ng-controller="MainController">
+
+        <div layout="row" layout-wrap>
+            <md-toolbar>
+
+                <div class="md-toolbar-tools">
+                    <md-button ng-click="toggleMenu()">☰</md-button>
+                    <h2 md-truncate="" flex="">My App's Title</h2>
+
+                    <md-button class="md-raised">Button</md-button>
+                    <md-button class="md-raised md-primary">Primary</md-button>
+                    <md-button class="md-raised md-primary md-hue-1">Primary Hue 1</md-button>
+                    <md-button class="md-raised md-accent ">Accent</md-button>
+                    <img src="images/logo.png" />
+                </div>
+
+            </md-toolbar>
+        </div>
+
+
+        <md-sidenav class="md-sidenav-left" md-component-id="left">
+            <md-list>
+                <md-list-item ng-repeat="item in menuItems">
+                    <a href="#!/{{item.route}}">
+                        <i ng-class="item.icon"></i>
+                        <span>{{item.name}}</span>
+                    </a>
+                </md-list-item>
+                <md-list-item class="md-icon-button" ng-click="closeMenu()">
+                    <i class="bi bi-x-square">
+                        <text>Close</text>
+                    </i>
+                </md-list-item>
+            </md-list>
+
+        </md-sidenav>
+
+    </div>
+    <div ng-view></div>
+<script defer src="bundle.js"></script></body>
+</html>

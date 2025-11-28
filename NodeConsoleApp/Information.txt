@@ -1,0 +1,62 @@
+npm install angular@1.8.3 @types/angular --save
+npm install webpack webpack-cli --save-dev 
+npm install html-webpack-plugin --save-dev
+npm install copy-webpack-plugin --save-dev
+
+npx webpack --mode development OR
+npx webpack --mode development --stats verbose
+
+SSL :
+
+choco install openssl -> localhost.cnf
+
+[req]
+distinguished_name = dn
+x509_extensions = EXT
+prompt = no
+
+[dn]
+CN = localhost
+
+[EXT]
+subjectAltName = DNS:localhost
+keyUsage = digitalSignature
+extendedKeyUsage = serverAuth
+
+openssl req -x509 -out server.crt -keyout server.key ^
+  -newkey rsa:2048 -nodes -sha256 -days 365 ^
+  -config localhost.cnf -extensions EXT
+
+(Double Click on server.crt and install the certificate in Trusted Root Certification Authorities)
+
+see Appendix for cross platform instructions.
+
+
+
+Appendix:
+
+## Local HTTPS Certificates (Cross-Platform)
+
+### Windows
+See Example 02 walkthrough.
+
+### Linux (Ubuntu)
+1. Install mkcert + libnss3-tools
+2. Run `mkcert -install`
+3. Generate certs: `mkcert localhost 127.0.0.1 ::1`
+
+### macOS
+1. Install mkcert via Homebrew
+2. Run `mkcert -install`
+3. Generate certs: `mkcert localhost 127.0.0.1 ::1`
+4. Verify trust in Keychain Access
+
+Angular Material
+
+npm install angular-material@1.2.3 --save
+npm install angular-aria angular-animate --save
+npm install angular-messages --save
+npm i bootstrap-icons
+
+Routing
+npm install angular-route
