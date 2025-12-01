@@ -55,25 +55,8 @@ angular.module('mainApp', [
         });
     })
 
-    .controller('HomeController', function ($scope, $mdDialog) {
-        $scope.message = "This is the Home page.";
-
-        $scope.showDialog = function () {
-
-            $mdDialog.show(
-                $mdDialog.alert()
-                    .title('Alert')
-                    .textContent('ℹ️ Information')
-                    .ok('Close')
-            );
-        };
-    })
-    .controller('CustomersController', function ($scope) {
-        $scope.message = "This is the Customers page.";
-    })
-    .controller('ReportsController', function ($scope) {
-        $scope.message = "This is the Reports page.";
-    })
-    .controller('SettingsController', function ($scope) {
-        $scope.message = "This is the Settings page.";
-    });
+// 👇 Auto‑import all controllers in ./controllers
+function importAll(r) {
+  r.keys().forEach(r);
+}
+importAll(require.context('./controllers', false, /\.js$/));
