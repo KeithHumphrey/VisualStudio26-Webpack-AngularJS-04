@@ -136,7 +136,57 @@ eval("{__webpack_require__(/*! ./angular */ \"../node_modules/angular/angular.js
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ \"../node_modules/angular/index.js\");\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var angular_animate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-animate */ \"../node_modules/angular-animate/index.js\");\n/* harmony import */ var angular_animate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angular_animate__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var angular_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-aria */ \"../node_modules/angular-aria/index.js\");\n/* harmony import */ var angular_aria__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular_aria__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-material */ \"../node_modules/angular-material/index.js\");\n/* harmony import */ var angular_material__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular_material__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var angular_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-messages */ \"../node_modules/angular-messages/index.js\");\n/* harmony import */ var angular_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angular_messages__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var angular_route__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-route */ \"../node_modules/angular-route/index.js\");\n/* harmony import */ var angular_route__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(angular_route__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\n// 1. Create the module\nangular__WEBPACK_IMPORTED_MODULE_0___default().module('mainApp', [\n    'ngMaterial',\n    'ngAnimate',\n    'ngAria',\n    'ngMessages',\n    'ngRoute'\n])\n    .config(function ($routeProvider) {\n        $routeProvider\n            .when('/home', {\n                templateUrl: 'views/home.html',\n                controller: 'HomeController'\n            })\n            .when('/customers', {\n                templateUrl: 'views/customers.html',\n                controller: 'CustomersController'\n            })\n            .when('/reports', {\n                templateUrl: 'views/reports.html',\n                controller: 'ReportsController'\n            })\n            .when('/settings', {\n                templateUrl: 'views/settings.html',\n                controller: 'SettingsController'\n            })\n            .otherwise({ redirectTo: '/home' });\n    })\n    .controller('MainController', function ($scope, $rootScope, $mdSidenav) {\n        $scope.menuItems = [\n            { name: 'Home', icon: 'bi-house-fill', route: 'home' },\n            { name: 'Customers', icon: 'bi-person-fill', route: 'customers' },\n            { name: 'Reports', icon: 'bi-file-earmark-text-fill', route: 'reports' },\n            { name: 'Settings', icon: 'bi-wrench', route: 'settings' }\n        ];\n\n        $scope.toggleMenu = function () {\n            $mdSidenav('left').toggle();\n        };\n\n        $scope.closeMenu = function () {\n            $mdSidenav('left').close();\n        };\n\n        // 👇 Auto-close sidenav on route change\n        $rootScope.$on('$routeChangeSuccess', function () {\n            $mdSidenav('left').close();\n        });\n    })\n\n    .controller('HomeController', function ($scope, $mdDialog) {\n        $scope.message = \"This is the Home page.\";\n\n        $scope.showDialog = function () {\n\n            $mdDialog.show(\n                $mdDialog.alert()\n                    .title('Alert')\n                    .textContent('ℹ️ Information')\n                    .ok('Close')\n            );\n        };\n    })\n    .controller('CustomersController', function ($scope) {\n        $scope.message = \"This is the Customers page.\";\n    })\n    .controller('ReportsController', function ($scope) {\n        $scope.message = \"This is the Reports page.\";\n    })\n    .controller('SettingsController', function ($scope) {\n        $scope.message = \"This is the Settings page.\";\n    });\n\n//# sourceURL=webpack:///./src/app.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ \"../node_modules/angular/index.js\");\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var angular_animate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-animate */ \"../node_modules/angular-animate/index.js\");\n/* harmony import */ var angular_animate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angular_animate__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var angular_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-aria */ \"../node_modules/angular-aria/index.js\");\n/* harmony import */ var angular_aria__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular_aria__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-material */ \"../node_modules/angular-material/index.js\");\n/* harmony import */ var angular_material__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular_material__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var angular_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-messages */ \"../node_modules/angular-messages/index.js\");\n/* harmony import */ var angular_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angular_messages__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var angular_route__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-route */ \"../node_modules/angular-route/index.js\");\n/* harmony import */ var angular_route__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(angular_route__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\n// 1. Create the module\nangular__WEBPACK_IMPORTED_MODULE_0___default().module('mainApp', [\n    'ngMaterial',\n    'ngAnimate',\n    'ngAria',\n    'ngMessages',\n    'ngRoute'\n])\n    .config(function ($routeProvider) {\n        $routeProvider\n            .when('/home', {\n                templateUrl: 'views/home.html',\n                controller: 'HomeController'\n            })\n            .when('/customers', {\n                templateUrl: 'views/customers.html',\n                controller: 'CustomersController'\n            })\n            .when('/reports', {\n                templateUrl: 'views/reports.html',\n                controller: 'ReportsController'\n            })\n            .when('/settings', {\n                templateUrl: 'views/settings.html',\n                controller: 'SettingsController'\n            })\n            .otherwise({ redirectTo: '/home' });\n    })\n    .controller('MainController', function ($scope, $rootScope, $mdSidenav) {\n        $scope.menuItems = [\n            { name: 'Home', icon: 'bi-house-fill', route: 'home' },\n            { name: 'Customers', icon: 'bi-person-fill', route: 'customers' },\n            { name: 'Reports', icon: 'bi-file-earmark-text-fill', route: 'reports' },\n            { name: 'Settings', icon: 'bi-wrench', route: 'settings' }\n        ];\n\n        $scope.toggleMenu = function () {\n            $mdSidenav('left').toggle();\n        };\n\n        $scope.closeMenu = function () {\n            $mdSidenav('left').close();\n        };\n\n        // 👇 Auto-close sidenav on route change\n        $rootScope.$on('$routeChangeSuccess', function () {\n            $mdSidenav('left').close();\n        });\n    })\n\n// 👇 Auto‑import all controllers in ./controllers\nfunction importAll(r) {\n  r.keys().forEach(r);\n}\nimportAll(__webpack_require__(\"./src/controllers sync \\\\.js$\"));\n\n\n//# sourceURL=webpack:///./src/app.js?\n}");
+
+/***/ }),
+
+/***/ "./src/controllers sync \\.js$":
+/*!**************************************************!*\
+  !*** ./src/controllers/ sync nonrecursive \.js$ ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("{var map = {\n\t\"./customers.js\": \"./src/controllers/customers.js\",\n\t\"./home.js\": \"./src/controllers/home.js\",\n\t\"./reports.js\": \"./src/controllers/reports.js\",\n\t\"./settings.js\": \"./src/controllers/settings.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/controllers sync \\\\.js$\";\n\n//# sourceURL=webpack:///./src/controllers/_sync_nonrecursive_\\.js$?\n}");
+
+/***/ }),
+
+/***/ "./src/controllers/customers.js":
+/*!**************************************!*\
+  !*** ./src/controllers/customers.js ***!
+  \**************************************/
+/***/ (() => {
+
+eval("{angular.module('mainApp')\n    .controller('CustomersController', function ($scope) {\n        $scope.message = \"This is the Customers page.\";\n    });\n\n//# sourceURL=webpack:///./src/controllers/customers.js?\n}");
+
+/***/ }),
+
+/***/ "./src/controllers/home.js":
+/*!*********************************!*\
+  !*** ./src/controllers/home.js ***!
+  \*********************************/
+/***/ (() => {
+
+eval("{angular.module('mainApp')\r\n    .controller('HomeController', function ($scope, $mdDialog) {\r\n        $scope.message = \"This is the Home page.\";\r\n\r\n        $scope.showDialog = function () {\r\n\r\n            $mdDialog.show(\r\n                $mdDialog.alert()\r\n                    .title('Alert')\r\n                    .textContent('ℹ️ Information')\r\n                    .ok('Close')\r\n            );\r\n        };\r\n    });\n\n//# sourceURL=webpack:///./src/controllers/home.js?\n}");
+
+/***/ }),
+
+/***/ "./src/controllers/reports.js":
+/*!************************************!*\
+  !*** ./src/controllers/reports.js ***!
+  \************************************/
+/***/ (() => {
+
+eval("{angular.module('mainApp')\r\n    .controller('ReportsController', function ($scope) {\r\n        $scope.message = \"This is the Reports page.\";\r\n    });\n\n//# sourceURL=webpack:///./src/controllers/reports.js?\n}");
+
+/***/ }),
+
+/***/ "./src/controllers/settings.js":
+/*!*************************************!*\
+  !*** ./src/controllers/settings.js ***!
+  \*************************************/
+/***/ (() => {
+
+eval("{angular.module('mainApp')\r\n    .controller('SettingsController', function ($scope) {\r\n        $scope.message = \"This is the Settings page.\";\r\n    });\n\n//# sourceURL=webpack:///./src/controllers/settings.js?\n}");
 
 /***/ })
 
